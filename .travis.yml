@@ -1,0 +1,26 @@
+language: node_js
+node_js: '8'
+cache: yarn
+
+git:
+  depth: 3
+
+env:
+  COMPOSE_VERSION: 1.14.0
+
+services: mongodb
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - NODE_ENV=test
+    - PORT=3000
+    - MONGO_URI=mongodb://test:test@ds111771.mlab.com:11771/chat-service-test
+    - MONGO_URI_TESTS=mongodb://test:test@ds111771.mlab.com:11771/chat-service-test
+
+script: yarn validate
+
+after_success: yarn coverage

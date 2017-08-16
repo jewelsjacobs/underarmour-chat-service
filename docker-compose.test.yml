@@ -1,0 +1,4 @@
+version: "2"
+services:
+  underarmour-chat-service:
+    command: yarn test
