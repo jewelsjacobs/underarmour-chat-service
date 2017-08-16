@@ -117,13 +117,18 @@ or
 docker-compose -f docker-compose.yml -f docker-compose.test.yml up
 ```
 
-## Deploy to heroku
+## Deploy
 
 Rename `deploy-example.sh` to `deploy.sh`
 
+Set your server ip:
+
+```bash
+DEPLOY_SERVER=127.0.0.1
+```
+
 In `deploy.sh`:
  - Replace `{docker-login}` with your docker hub login
- - Replace `{heroku login}` and `{heroku auth token}` with your heroku information
  
 In `.env`:
 
