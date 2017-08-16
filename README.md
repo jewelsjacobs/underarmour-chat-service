@@ -119,24 +119,17 @@ docker-compose -f docker-compose.yml -f docker-compose.test.yml up
 
 ## Deploy
 
-Rename `deploy-example.sh` to `deploy.sh`
-
 Set your server ip:
 
 ```bash
 DEPLOY_SERVER=127.0.0.1
 ```
 
-In `deploy.sh`:
- - Replace `{docker-login}` with your docker hub login
- 
-In `.env`:
+Replace my Docker username with yours:
 
-  - Add `MONGO_URI` with an external mongodb connection, Ie. `MONGO_URI=mongodb://login:pass@ds017688.mlab.com:17688/chat-service`
-  
-In `docker-compose.prod.yml`:
-
-  - Replace the mongodb ports value with the port from the production mongodb.
+```bash
+nano deploy.sh
+```
 
 Run deploy script:
 

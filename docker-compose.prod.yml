@@ -1,17 +1,4 @@
-version: "2"
+version: "2.0"
 services:
-  underarmour-chat-service:
-    env_file: .env
+  boilerplate-api:
     command: yarn start
-    build: .
-    volumes:
-      - .:/app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mongodb
-
-  mongodb:
-    image: mongo
-    ports:
-      - "17688:17688"
