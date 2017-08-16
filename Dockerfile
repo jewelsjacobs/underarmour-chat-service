@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:8.1.4-alpine
 
 EXPOSE 3000
 
@@ -8,7 +8,8 @@ ENV NODE_ENV $NODE_ENV
 RUN mkdir /app
 WORKDIR /app
 ADD package.json yarn.lock /app/
-RUN yarn --pure-lockfile
+RUN yarn install --pure-lockfile --silent && \
+    yarn global add nodemon
 ADD . /app
 
 CMD ["yarn", "docker:start"]
