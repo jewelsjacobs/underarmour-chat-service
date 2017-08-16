@@ -3,7 +3,7 @@ services:
   underarmour-chat-service:
     build: .
     environment:
-      - MONGO_URI=mongodb://localhost:27017/chat-service
+      - MONGO_URI=mongodb://mongodb:27017/chat-service
     volumes:
       - .:/app
     ports:
