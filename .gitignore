@@ -1,7 +1,7 @@
 # Environment variables
 .env
 
-deploy.sh
+deploy-to-azure.sh
 
 # Logs
 logs
