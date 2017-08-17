@@ -2,6 +2,7 @@ const path = require('path');
 
 // import .env variables
 require('dotenv-safe').load({
+  allowEmptyValues: true,
   path: path.join(__dirname, '../../.env'),
   development: path.join(__dirname, '../../.env.example'),
 });
