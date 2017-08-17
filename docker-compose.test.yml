@@ -1,19 +1,19 @@
 version: "2.0"
 services:
   underarmour-chat-service:
-      build: .
-      command: yarn test
-      environment:
-        - MONGO_URI=mongodb://mongodb:27017/chat-service
-      volumes:
-        - .:/app
-      ports:
-        - "3000:3000"
-      depends_on:
-        - mongodb
+    build: .
+    command: yarn test
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/chat-service
+      - IMAGE_NAME=jewelsjacobs/underarmour-chat-service:latest
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
 
-    mongodb:
-      image: mongo
-      ports:
-        - "27017:27017"
-
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
